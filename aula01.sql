@@ -59,12 +59,31 @@ INSERT INTO Cliente(nome, id_endereco) VALUES ('Copacabana', 1);
 INSERT INTO pais(nome) VALUES ('França');
 INSERT INTO Estado(nome, id_pais) VALUES ('Paris', 2);
 INSERT INTO Cidade(nome, id_estado) VALUES ('O Grand Est', 2);
-INSERT INTO Bairro(nome, id_cidade) VALUES ('Copacabana', 2);
-INSERT INTO Endereco(nome, id_bairro) VALUES ('Praia de Copacabana', 2);
+INSERT INTO Bairro(nome, id_cidade) VALUES ('La Défense', 2);
+INSERT INTO Endereco(nome, id_bairro) VALUES ('Na torre eifel', 2);
 INSERT INTO Cliente(nome, id_endereco) VALUES ('Gabriel', 2);
 
 
-
 INSERT INTO pais(nome) VALUES ('Itália');
+INSERT INTO Estado(nome, id_pais) VALUES ('Roma', 3);
+INSERT INTO Cidade(nome, id_estado) VALUES ('Veneza', 3);
+INSERT INTO Bairro(nome, id_cidade) VALUES ('Via del Babuíno', 3);
+INSERT INTO Endereco(nome, id_bairro) VALUES ('Li Atalanta', 3);
+INSERT INTO Cliente(nome, id_endereco) VALUES ('Melo', 3);
+
+
+
 INSERT INTO pais(nome) VALUES ('Brasil');
+INSERT INTO Estado(nome, id_pais) VALUES ('Ceará', 4);
+INSERT INTO Cidade(nome, id_estado) VALUES ('Fortazela', 4);
+INSERT INTO Bairro(nome, id_cidade) VALUES ('Bom Futuro', 4);
+INSERT INTO Endereco(nome, id_bairro) VALUES ('Travessa Luiz Rafanelli', 4);
+INSERT INTO Cliente(nome, id_endereco) VALUES ('Karina', 4);
+
+
 INSERT INTO pais(nome) VALUES ('Espanha');
+INSERT INTO Estado(nome, id_pais) VALUES ('Madrid', 5);
+INSERT INTO Cidade(nome, id_estado) VALUES ('Valencia', 5);
+INSERT INTO Bairro(nome, id_cidade) VALUES ('Barcelona', 5);
+INSERT INTO Endereco(nome, id_bairro) VALUES ('Visca Barça', 5);
+INSERT INTO Cliente(nome, id_endereco) VALUES ('Carneiro', 5);
