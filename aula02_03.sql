@@ -59,6 +59,36 @@ BEGIN
     
 END;
 
+
+SET SERVEROUTPUT ON;
+DECLARE
+    VALOR_CARRO NUMBER := &VALOR_DO_CARRO;
+    PARCELA NUMBER := &VALOR_DO_PARCELA;
+    VALOR_DA_PARCELA NUMBER;
+BEGIN
+    VALOR_CARRO := VALOR_CARRO-VALOR_CARRO*0.20;
+    IF PARCELA = 6 THEN
+        VALOR_CARRO := VALOR_CARRO * 1.10;
+        VALOR_DA_PARCELA := VALOR_CARRO / 6;
+        dbms_output.put_line('6 parcelas');
+        dbms_output.put_line('VALOR A SER FINANCIADO = '|| VALOR_CARRO);
+        dbms_output.put_line('VALOR DA PARCELA = '|| VALOR_DA_PARCELA);
+    ELSIF PARCELA = 12 THEN
+        VALOR_CARRO := VALOR_CARRO * 1.15;
+        VALOR_DA_PARCELA := VALOR_CARRO / 12;
+        dbms_output.put_line('12 parcelas');
+        dbms_output.put_line('VALOR A SER FINANCIADO = '|| VALOR_CARRO);
+        dbms_output.put_line('VALOR DA PARCELA = '|| VALOR_DA_PARCELA);
+    ELSIF PARCELA = 18 THEN
+        VALOR_CARRO := VALOR_CARRO * 1.20;
+        VALOR_DA_PARCELA := VALOR_CARRO / 18;
+        dbms_output.put_line('18 parcelas');
+        dbms_output.put_line('VALOR A SER FINANCIADO = '|| VALOR_CARRO);
+        dbms_output.put_line('VALOR DA PARCELA = '|| VALOR_DA_PARCELA);
+    END IF;
+END;
+
+
 --EX 5
 DECLARE
     SEXO CHAR := '&SEXO';
@@ -78,9 +108,9 @@ DECLARE
     NUMERO NUMBER(10) := &NUMERO;
 BEGIN
     IF MOD(NUMERO, 2) = 0 THEN
-        dbms_output.put_line('O Número é Par!');
+        dbms_output.put_line('O NÃºmero Ã© Par!');
     ELSIF MOD(NUMERO, 2) = 1 THEN
-        dbms_output.put_line('O Número é Impar!');
+        dbms_output.put_line('O NÃºmero Ã© Impar!');
     END IF;
 END;
 
@@ -91,9 +121,9 @@ DECLARE
     NUMERO NUMBER(10) := &NUMERO;
 BEGIN
     IF NUMERO < 0 THEN
-        dbms_output.put_line('O Número é negativo!');
+        dbms_output.put_line('O NÃºmero Ã© negativo!');
     ELSIF NUMERO >= 0 THEN
-        dbms_output.put_line('O Número é positivo!');
+        dbms_output.put_line('O NÃºmero Ã© positivo!');
     ELSE 
         dbms_output.put_line('Algo deu errado!');
     END IF;
@@ -125,7 +155,7 @@ DECLARE
     idade NUMBER(3) := '&idade';
 BEGIN
     IF idade >= 0 AND idade < 12 THEN
-        dbms_output.put_line('Criança');
+        dbms_output.put_line('CrianÃ§a');
     ELSIF idade >= 12 AND idade < 20 THEN
         dbms_output.put_line('Jovem!');
      ELSIF idade >= 20 AND idade < 60 THEN
@@ -133,7 +163,7 @@ BEGIN
      ELSIF idade >= 60 AND idade < 90 THEN
         dbms_output.put_line('Idoso!');
     ELSIF idade >= 90 THEN
-        dbms_output.put_line('Ancião');
+        dbms_output.put_line('AnciÃ£o');
     ELSE
         dbms_output.put_line('Valor da idade passado de forma incorreta!');
     END IF;
